@@ -49,8 +49,8 @@ export default class OrbitSprite {
    }
 
    positionInContainer(container) {
-      var x = Math.cos(this.position.theta) * this.position.radius + container.width / 2
-      var y = Math.sin(this.position.theta) * this.position.radius + container.height / 2
+      const x = Math.cos(this.position.theta) * this.position.radius + container.width / 2
+      const y = Math.sin(this.position.theta) * this.position.radius + container.height / 2
       this.sprite.position.x = x
       this.sprite.position.y = y
    }
