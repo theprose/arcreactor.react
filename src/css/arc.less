@@ -90,27 +90,59 @@ html {
 	right: 0px;
 	height: 60px;
 	z-index: 2;
+	overflow: visible;
 }
 
 .navbar-inner {
 	// width: 1400px;
 	// margin: auto;
+	overflow: visible;
 }
 
-.navbar--dark {
-	a {
-		color: black;
-	}
+.navbar-menu-button {
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	border: 2px solid white;
+	border-radius: 50%;
+	box-sizing: border-box;
+	bottom: 0px;
+	right: 15px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 50% 50%;
+	background-image: url('../images/menu-white.svg');
 }
 
-.navbar--mobile {
-	.navbar__buttons {
-		max-width: 100px;
-	}
-	.navbutton {
-		padding-top: 15px;
-	}
+.navbar-menu {
+	position: absolute;
+	background: black;
+	top: 60px;
+	right: 0px;
+	padding: 15px 0px;
+	border-bottom-left-radius: 2px;
 }
+
+.navbar-menu__option {
+	cursor: pointer;
+	display: block;
+	color: white;
+	text-decoration: none;
+	font-family: @fontGothamBook;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	text-align: right;
+}
+
+// .navbar--mobile {
+// 	.navbar__buttons {
+// 		max-width: 100px;
+// 	}
+// 	.navbutton {
+// 		padding-top: 15px;
+// 	}
+// }
 
 .navbar__logo {
 	position: absolute;
@@ -128,11 +160,11 @@ html {
 
 .navbar__buttons {
 	float: right;
+	display: none;
 }
 
 .navbutton {
 	cursor: pointer;
-	position: relative;
 	display: block;
 	float: left;	
 	color: white;
@@ -197,8 +229,9 @@ html {
 .content-inner {
 	margin: auto;
 	max-width: 1400px;
-	padding-top: 60px;
+	padding-top: 15px;
 	padding-bottom: 60px;
+	transition: padding-top 300ms;
 }
 
 .flex-center {
@@ -214,7 +247,7 @@ html {
 	padding-right: 15px;
 	font-family: @fontGothamBook;
 	font-size: 16px;
-	line-height: 1.5em;
+	line-height: 1.7em;
 
 	p {
 		margin: 0px;
@@ -227,6 +260,14 @@ html {
 	padding-bottom: 30px;
 	padding-top: 30px;
 	margin: 0px;
+	line-height: 1.2em;
+	letter-spacing: 0.1em;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.content-about-title--center {
+	text-align: center;
 }
 
 .project-banner {
@@ -244,8 +285,10 @@ html {
 	font-family: @fontGothamBold;
 	font-size: 40px;
 	padding-left: 30px;
+	padding-top: 30px;
 	padding-right: 30px;
 	text-align: center;
+	margin: none;
 }
 
 .project-container {
@@ -256,7 +299,8 @@ html {
   	flex-direction: row;
   	max-width: 1400px;
   	margin: auto;
-  	padding-top: 60px;
+  	padding-top: 15px;
+  	transition: padding-top 300ms;
 }
 
 .project-tile {
@@ -521,7 +565,7 @@ html {
 }
 
 .float-transition--delay-9000 {
-	.float-transition-mixin(190ms);
+	.float-transition-mixin(1900ms);
 }
 
 .float-transition-enter {
@@ -542,4 +586,20 @@ html {
 .float-transition-exit.float-transition-exit-active {
 	top: 50px;
   	opacity: 0;
+}
+
+@media only screen and (min-width: 550px) {
+	
+	.navbar-menu-button, .navbar-menu {
+		display: none;
+	}
+
+	.navbar__buttons {
+		display: block;
+	}
+
+	.content-inner, .project-container {
+		padding-top: 60px;
+	}
+
 }

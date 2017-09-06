@@ -25,11 +25,11 @@ export default class Portfolio extends React.Component {
 
    renderTitle() {
       return (
-         <FloatTransition class="float-transition projects-title">
+         <FloatTransition class="float-transition">
             <div>
-               We love ideas.
-               <br />
-               Here are some of ours...
+               <h1 class="content-about-title content-about-title--center">
+                  We love ideas.
+               </h1>
             </div>
          </FloatTransition>
       )
