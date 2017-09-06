@@ -62,11 +62,11 @@ export default class OrbitSprite {
 
    // t is time in seconds
    tick(context, delta) {
-      const { bang, container, color, tick } = context
+      const { bang, container, color } = context
 
       // deal with color
       if(color && this.sprite.tint !== color) {
-         this.sprite.tint = this.colorStep(this.sprite.tint, color, tick)
+         this.sprite.tint = this.colorStep(this.sprite.tint, color)
       }
 
       // expand universe
