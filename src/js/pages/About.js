@@ -1,13 +1,28 @@
 import React from "react"
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 
+import { FloatTransition } from "../util/Transitions"
 import ContentLayout from "../components/ContentLayout"
 
 export default class About extends React.Component {
 
-   render() {
+   constructor(props) {
+      super(props)
+      this.state = {
+         content: null
+      }
+   }
+
+   componentDidMount() {
+      this.setState({
+         content: this.renderContent()
+      })
+   }
+
+   renderContent() {
       return (
-         <ContentLayout>
-            <div class="content-about">
+         <FloatTransition class="float-transition">
+            <div>
                <h1 class="content-about-title">OUR MISSION</h1>
                <p>To imagine and create revolutionary technology, advance human knowledge, and 
                positively impact the world for generations to come.</p>
@@ -32,6 +47,18 @@ export default class About extends React.Component {
                not driven by money; we are driven by wealth – wealth of knowledge, health, 
                happiness, and progress. We value truth and justice, kindness and mindfulness. 
                We value creativity and passion, inspiration and imagination. We value greatness.</p>
+            </div>
+         </FloatTransition>
+      )
+   }
+
+   render() {
+      return (
+         <ContentLayout>
+            <div class="content-about">
+               <TransitionGroup>
+                  {this.state.content}
+               </TransitionGroup>
             </div>
          </ContentLayout>
       )

@@ -2,72 +2,60 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 
+import { BalloonTransition, FloatTransition } from "../util/Transitions"
 import Projects from "../util/Projects"
 import ContentLayout from "../components/ContentLayout"
-
-const BalloonTransition = (props) => {
-   return <CSSTransition
-      {...props}
-      classNames="balloon-transition"
-      timeout={{ enter: 500, exit: 500 }}
-   />
-}
 
 export default class Portfolio extends React.Component {
 
    constructor(props) {
       super(props)
       this.state = {
-         stage: null,
-         content: null,
-         projects: Projects.projects
+         title: null,
+         projects: null
       }
    }
 
    componentDidMount() {
-      this.setState({stage: this.renderStage()})
-   }
-
-   renderContent() {
-
-      const projects = this.state.projects.map((project, i) => {
-         const projectClass = "project-tile--"+project.name
-         return (
-            <Link to={"/project/"+project.name} key={i} class={"project-tile "+projectClass}>
-               <div class="project-tile__image" />
-               <div class="project-tile__name">{project.title}</div>
-            </Link>
-         )
+      this.setState({
+         title: this.renderTitle(),
+         projects: Projects.projects
       })
-
-      return (
-         <div class="project-container">
-            {projects}
-         </div>
-      )
    }
 
-   // renderStage() {
-   //    return (
-   //       <BalloonTransition>
-   //          <div class="content-stage">
-   //             <div class="content-inner">
-                  
-   //             </div>
-   //          </div>
-   //       </BalloonTransition>
-   //    )
-   // }
-
-   render() {
+   renderTitle() {
       return (
-         <ContentLayout>
-            <div class="projects-title">
+         <FloatTransition class="float-transition projects-title">
+            <div>
                We love ideas.
                <br />
                Here are some of ours...
             </div>
-            {this.renderContent()}
+         </FloatTransition>
+      )
+   }
+
+   render() {
+      const projects = this.state.projects ? this.state.projects.map((project, i) => {
+         const projectClass = "project-tile--"+project.name
+         return (
+            <FloatTransition key={i} class={`float-transition--delay-${(i+1)*1000} project-tile ${projectClass}`}>
+               <Link to={"/project/"+project.name}  class={"project-tile "+projectClass}>
+                  <div class="project-tile__image" />
+                  <div class="project-tile__name">{project.title}</div>
+               </Link>
+            </FloatTransition>
+         )
+      }) : null
+
+      return (
+         <ContentLayout>
+            <TransitionGroup>
+               {this.state.title}
+            </TransitionGroup>
+            <TransitionGroup class="project-container">
+               {projects}
+            </TransitionGroup>
          </ContentLayout>
       )
 

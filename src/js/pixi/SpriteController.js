@@ -4,6 +4,7 @@ import OrbitSprite from "../pixi/OrbitSprite"
 const closestOrbit = 40 
 const orbitIncrement = 40
 const maxOrbits = 15
+const bodiesPerOrbit = 8
 
 export default class SriteController {
 
@@ -23,7 +24,6 @@ export default class SriteController {
 
    generate() {
       var currentOrbit = closestOrbit
-      var bodiesPerOrbit = 4;
       var radialIncrement = 2 * Math.PI / bodiesPerOrbit;
       
       for(var i = 0; i < maxOrbits; i++) {

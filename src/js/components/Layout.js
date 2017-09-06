@@ -7,26 +7,10 @@ import Navbar from "../components/Navbar"
 
 export default class Layout extends React.Component {
 
-   // componentWillMount() {
-   //    pixi.create()
-   // }
-
-   // componentDidMount() {
-   //    pixi.render()
-   // }
-
-   // componentWillUnmount() {
-   //    pixi.destroy()
-   // }
-
-   onNavigate() {
-      
-   }
-
    render() {
       return (
          <div>
-            <Navbar onNavigate={this.onNavigate.bind(this)} />
+            <Navbar />
             {this.props.children}
          </div>
       )
