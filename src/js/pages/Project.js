@@ -2,6 +2,7 @@ import React from "react"
 import { Redirect } from "react-router-dom"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 
+import pixi from "../pixi/PIXIPage"
 import { FloatTransition } from "../util/Transitions"
 import Projects from "../util/Projects"
 import ContentLayout from "../components/ContentLayout"
@@ -16,6 +17,12 @@ export default class Project extends React.Component {
          title: null,
          summary: null,
          links: null
+      }
+   }
+
+   componentWillMount() {
+      if(this.state.project.color) {
+         pixi.setTargetColor(this.state.project.color)
       }
    }
 

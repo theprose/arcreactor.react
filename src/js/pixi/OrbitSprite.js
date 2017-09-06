@@ -40,8 +40,6 @@ export default class OrbitSprite {
          theta: this.initialConditions.theta
       }
 
-      console.log(`ADD SPRITE`)
-
       var sprite = new PIXI.Sprite(texture)
       sprite.tint = color //colorToHex(this.colorScale(node.scale))
       sprite.scale.x = nodeScale * this.initialConditions.scale
@@ -61,10 +59,17 @@ export default class OrbitSprite {
       return (percentage * (this.stableConditions[variable] - this.initialConditions[variable])) + this.initialConditions[variable]
    }
 
+
    // t is time in seconds
    tick(context, delta) {
-      const { bang, container } = context
+      const { bang, container, color, tick } = context
 
+      // deal with color
+      if(color && this.sprite.tint !== color) {
+         this.sprite.tint = this.colorStep(this.sprite.tint, color, tick)
+      }
+
+      // expand universe
       if(bang.hasOccurred) {
          this.conditions.velocity = this.stabilize('velocity', bang.percentage)
          this.conditions.scale = this.stabilize('scale', bang.percentage)
@@ -75,6 +80,20 @@ export default class OrbitSprite {
 
       this.position.theta = (this.position.theta + this.conditions.velocity * delta) % (2 * Math.PI)
       this.positionInContainer(container)
+   }
+
+   colorStep(fromColor, toColor, tick) {
+      const f = {r: (fromColor >> 16), g: (fromColor >> 8 & 0x00FF), b: (fromColor & 0x0000FF)}
+      const t = {r: (toColor >> 16), g: ((toColor >> 8) & 0x00FF), b: (toColor & 0x0000FF)}
+      const diff = {r: (t.r - f.r), g: (t.g - f.g), b: (t.b - f.b)}
+      const step = {
+         r: Math.min(Math.max(diff.r, -1), 1),
+         g: Math.min(Math.max(diff.g, -1), 1),
+         b: Math.min(Math.max(diff.b, -1), 1)
+      }
+      const color = {r: (f.r + step.r), g: (f.g + step.g), b: (f.b + step.b)}
+      var newColor = (color.b | (color.g << 8) | (color.r << 16))
+      return newColor
    }
 
    render(app) {

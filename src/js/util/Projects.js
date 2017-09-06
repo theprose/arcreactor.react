@@ -14,7 +14,8 @@ const Projects = {
          its user profiles, which will allow authors to monetize their work via subscriptions from 
          their readers.`,
          website: "https://theprose.com",
-         ios: "https://itunes.apple.com/us/app/prose/id911216930"
+         ios: "https://itunes.apple.com/us/app/prose/id911216930",
+         color: 0x028DA9
       },
       {
          name: "sqrl",
@@ -26,7 +27,8 @@ const Projects = {
          on the App Store. In the near future, we’ll be working on a more extensive feature set to 
          allow users more flexibility in remote controlling their Macs using their iOS devices.`,
          website: "http://thesqrlapp.com",
-         ios: "https://itunes.apple.com/us/app/sqrl-controller/id1232478753"
+         ios: "https://itunes.apple.com/us/app/sqrl-controller/id1232478753",
+         color: 0xee4523
       },
       {
          name: "love",
@@ -40,7 +42,8 @@ const Projects = {
          to help us “think with our hearts.” Love will launch worldwide on the App Store in early 
          June of 2017.`,
          website: "https://livn.love",
-         ios: "https://itunes.apple.com/us/app/love/id1129131596"
+         ios: "https://itunes.apple.com/us/app/love/id1129131596",
+         color: 0x00e8ff
       },
       {
          name: "taggle",
@@ -51,7 +54,8 @@ const Projects = {
          Amazon or eBay, additionally providing the flexibility of various review formats, features, 
          and social network integration. Taggle was Arc Reactor’s first project, but took a backseat 
          when the team recognized a disruption opportunity in the publishing industry and grew 
-         increasingly excited about Prose.`
+         increasingly excited about Prose.`,
+         color: 0x37147a
       },
       {
          name: "give",
@@ -59,7 +63,8 @@ const Projects = {
          summary: `In collaboration with a student at the University of Washington's School of Medicine,
          we recently started on an app to improve cancer treatment in low-income nations via a digital
          awareness campaign designed to encourage people to donate blood. The project was submitted for
-         the Astellas Oncology C3 Prize.`
+         the Astellas Oncology C3 Prize.`,
+         color: 0xf71414
       },
       {
          name: "note",
@@ -68,14 +73,16 @@ const Projects = {
          messages to their friends and contacts. Note makes it easy to edit song clips, matching 
          them with videos or images, and distribute that “note” to individuals or groups of contacts. 
          We built Note and put it on the App Store, but marketing and development were put on hold as 
-         we assigned priority to Prose.`
+         we assigned priority to Prose.`,
+         color: 0x36ed7d
       },
       {
          name: "mercuri",
          title: "Mercuri",
          summary: `Inspired by Bill & Melinda Gates Foundation -endorsed Recovery Café, Mercury is a 
          mobile support group that aims to counteract the rising tides of isolation and loneliness. 
-         Since Mercuri is still in development, we can't share much about the details of our approach.`
+         Since Mercuri is still in development, we can't share much about the details of our approach.`,
+         color: 0xdd15ff
 
       },
       {
@@ -83,14 +90,16 @@ const Projects = {
          title: "Zense",
          summary: `Zense is a project we're currently seeking to fund and develop. Should we find
          the funding, it'll be our first foray into robotics and real-world computing in quite
-         some time. Please email us if you're interested.`
+         some time. Please email us if you're interested.`,
+         color: 0x00ffff
       },
       {
          name: "bernard",
          title: "Bernard",
          summary: `We can't tell you much about Bernard. It's a research project we've been fiddling 
          with for some time. All we can say is it's related to artificial intelligence, computer
-         vision, and human consciousness.`
+         vision, and human consciousness.`,
+         color: 0x00ffff
       }
    ],
 

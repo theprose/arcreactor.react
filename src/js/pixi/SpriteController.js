@@ -5,12 +5,14 @@ const closestOrbit = 40
 const orbitIncrement = 40
 const maxOrbits = 15
 const bodiesPerOrbit = 8
+var tickCount = 0
 
 export default class SriteController {
 
    constructor(app) {
       this.app = app
       this.sprites = []
+      this.targetColor = 0x00ffff
 
       this.spriteTexture = PIXI.Texture.fromCanvas(this.makeSpriteCanvas())
 
@@ -20,6 +22,10 @@ export default class SriteController {
 
    getSprites() {
       return this.sprites
+   }
+
+   setTargetColor(color) {
+      this.targetColor = color
    }
 
    generate() {
@@ -39,13 +45,9 @@ export default class SriteController {
             var distOffset = i / maxOrbits;
             var scale = (Math.random() * (maxSize - minSize) * distOffset) + minSize;
 
-            //color
-            // var color = new Color('white') - BigBang.deepestBlue * Math.random() * distOffset;
-            //var color = new Color('white')
-            var color = 0x00ffff;
-            //BigBang.bodies.push(new OrbitalBody(theta, closestOrbit, size, color));
             const sprite = new OrbitSprite({
-               theta, scale, color,
+               theta, scale,
+               color: this.targetColor,
                orbitRadius: currentOrbit,
                texture: this.spriteTexture
             })
@@ -58,8 +60,6 @@ export default class SriteController {
          currentOrbit += orbitIncrement;
       }
 
-
-
       this.app.stage.addChild(this.layer)
             
       // Listen for animate update
@@ -69,12 +69,6 @@ export default class SriteController {
    }
 
    resize(w, h) {
-      console.log(`SpriteController.resize(${w}, ${h})`)
-      //this.layer.width = this.app.renderer.width
-      //this.layer.height = this.app.renderer.height
-      //this.layer.x = 0;
-      //this.layer.y = 0;
-
       for(let sprite of this.sprites) {
          sprite.positionInContainer(this.app.renderer)
       }
@@ -93,11 +87,14 @@ export default class SriteController {
       for(let sprite of this.sprites) {
          sprite.tick({
             container: this.app.renderer,
+            color: this.targetColor,
+            tick: tickCount,
             bang
          }, delta)
       }
 
       this.lastTime = (new Date)
+      tickCount++
    }
 
    destroy() {

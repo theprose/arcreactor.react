@@ -15,7 +15,6 @@ class PIXIPage {
          return
       }
 
-      console.log("PIXI APP CREATED")
       const { width, height } = this.defaultSize
       this.app = new PIXI.Application(width, height, {backgroundColor : 0x000000}) //0x333333
       document.body.appendChild(this.app.view)
@@ -24,24 +23,17 @@ class PIXIPage {
    }
 
    render() {
-      console.log("PIXI APP RENDER")
       this.onResize()
       this.spriteController.generate()
    }
 
+   setTargetColor(color) {
+      this.spriteController.setTargetColor(color)
+   }
+
    onResize() {
-      console.log(`ON RESIZE: (${window.innerWidth}, ${window.innerHeight})`)
       const { width, height } = this.defaultSize
       var ratio = width / height;
-
-      // if(window.innerWidth / window.innerHeight >= ratio) {
-      //    var w = window.innerHeight * ratio;
-      //    var h = window.innerHeight;
-      // } else {
-      //    var w = window.innerWidth;
-      //    var h = window.innerWidth / ratio;
-      // }
-
       this.app.renderer.view.style.width = window.innerWidth + 'px';
       this.app.renderer.view.style.height = window.innerHeight + 'px';
       this.app.renderer.resize(window.innerWidth, window.innerHeight)
