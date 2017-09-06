@@ -92,7 +92,7 @@ export default class OrbitSprite {
          b: Math.min(Math.max(diff.b, -1), 1)
       }
       const color = {r: (f.r + step.r), g: (f.g + step.g), b: (f.b + step.b)}
-      var newColor = (color.b | (color.g << 8) | (color.r << 16))
+      const newColor = (color.b | (color.g << 8) | (color.r << 16))
       return newColor
    }
 

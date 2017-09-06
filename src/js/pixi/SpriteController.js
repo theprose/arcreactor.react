@@ -5,7 +5,9 @@ const closestOrbit = 40
 const orbitIncrement = 40
 const maxOrbits = 15
 const bodiesPerOrbit = 8
-var tickCount = 0
+const maxBodySize = 5 
+const minBodySize = 1
+const bangDuration = 1.2
 
 export default class SriteController {
 
@@ -13,10 +15,11 @@ export default class SriteController {
       this.app = app
       this.sprites = []
       this.targetColor = 0x00ffff
+      this.tickCount = 0
 
       this.spriteTexture = PIXI.Texture.fromCanvas(this.makeSpriteCanvas())
-
       this.layer = new PIXI.Container()
+     
       this.tick = this.tick.bind(this)
    }
 
@@ -30,20 +33,15 @@ export default class SriteController {
 
    generate() {
       var currentOrbit = closestOrbit
-      var radialIncrement = 2 * Math.PI / bodiesPerOrbit;
+      const radialIncrement = 2 * Math.PI / bodiesPerOrbit;
       
       for(var i = 0; i < maxOrbits; i++) {
          
          for(var j = 0; j < bodiesPerOrbit; j++) {
             
             //angle
-            var theta = (Math.random() * (j+1) * radialIncrement) + (j * radialIncrement);
-            
-            //size
-            var maxSize = 5; 
-            var minSize = 1;
-            var distOffset = i / maxOrbits;
-            var scale = (Math.random() * (maxSize - minSize) * distOffset) + minSize;
+            const theta = (Math.random() * (j+1) * radialIncrement) + (j * radialIncrement);
+            const scale = (Math.random() * (maxBodySize - minBodySize) * (i / maxOrbits)) + minBodySize;
 
             const sprite = new OrbitSprite({
                theta, scale,
@@ -81,24 +79,23 @@ export default class SriteController {
       
       const bang = {
          hasOccurred: (seconds > 2),
-         percentage: Math.min((seconds - 2) / 1.2, 1)
+         percentage: Math.min((seconds - 2) / bangDuration, 1)
       }
 
       for(let sprite of this.sprites) {
          sprite.tick({
             container: this.app.renderer,
             color: this.targetColor,
-            tick: tickCount,
             bang
          }, delta)
       }
 
-      this.lastTime = (new Date)
-      tickCount++
+      this.lastTime = new Date
+      this.tickCount++
    }
 
    destroy() {
-      for(const sprite of this.sprites) {
+      for(let sprite of this.sprites) {
          sprite.destroy()
       }
       this.sprites = []
