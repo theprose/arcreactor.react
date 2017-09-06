@@ -96,12 +96,8 @@ export default class OrbitSprite {
       return newColor
    }
 
-   render(app) {
-      app.stage.addChild(this.graphics)
-   }
-
    destroy() {
-      this.graphics.destroy()
+      this.sprite.destroy()
    }
 
 }
