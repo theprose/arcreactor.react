@@ -91,7 +91,7 @@ dist/*
 !dist/.gitkeep
 public/js/*
 !public/js/.gitkeep
-public/jimages/*
+public/images/*
 !public/images/.gitkeep
 public/fonts/*
 !public/fonts/.gitkeep
