@@ -78,7 +78,7 @@ const Projects = {
       {
          name: "mercuri",
          title: "Mercuri",
-         summary: `Inspired by Bill & Melinda Gates Foundation -endorsed Recovery Café, Mercury is a 
+         summary: `Inspired by Bill & Melinda Gates Foundation -endorsed Recovery Café, Mercuri is a 
          mobile support group that aims to counteract the rising tides of isolation and loneliness. 
          Since Mercuri is still in development, we can't share much about the details of our approach.`,
          color: 0xdd15ff
