@@ -44,6 +44,7 @@
     "pixi.js": "^4.5.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-ga": "^2.2.0",
     "react-pixi": "^0.9.15",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",

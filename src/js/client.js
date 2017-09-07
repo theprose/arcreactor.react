@@ -10,6 +10,7 @@ import Project from "./pages/Project"
 import About from "./pages/About"
 import Team from "./pages/Team"
 import pixi from "./pixi/PIXIPage"
+import withTracker from './components/withTracker'
 
 const app = document.getElementById('app')
 
@@ -33,6 +34,6 @@ pixi.render()
 
 ReactDOM.render(
    <BrowserRouter>
-      <Main />
+      <Route component={withTracker(Main)} />
    </BrowserRouter>
 , app);

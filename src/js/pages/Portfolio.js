@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { TransitionGroup, CSSTransition } from "react-transition-group"
+import { TransitionGroup } from "react-transition-group"
 
 import { BalloonTransition, FloatTransition } from "../util/Transitions"
 import Projects from "../util/Projects"
@@ -58,57 +58,5 @@ export default class Portfolio extends React.Component {
             </TransitionGroup>
          </ContentLayout>
       )
-
-      // return (
-      //    <Layout>
-      //       <div class="content-container">
-      //          <TransitionGroup class="content-fill flex-center">
-      //             {this.state.stage}
-      //          </TransitionGroup>
-      //       </div>
-      //    </Layout>
-      // )
    }
 }
-
-// export default class TodoList extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {items: ['hello', 'world', 'click', 'me']};
-//     this.handleAdd = this.handleAdd.bind(this);
-//   }
-
-//   handleAdd() {
-//     const newItems = this.state.items.concat([
-//       prompt('Enter some text')
-//     ]);
-//     this.setState({items: newItems});
-//   }
-
-//   handleRemove(i) {
-//     let newItems = this.state.items.slice();
-//     newItems.splice(i, 1);
-//     this.setState({items: newItems});
-//   }
-
-//   render() {
-//     const items = this.state.items.map((item, i) => (
-//       <FadeTransition key={i} >
-//       <h1 onClick={() => this.handleRemove(i)}>
-//         {item}
-//       </h1>
-//       </FadeTransition>
-//     ));
-
-//     return (
-//       <Layout>
-//          <div class="content-container">
-//            <button onClick={this.handleAdd}>Add Item</button>
-//            <TransitionGroup>
-//              {items}
-//            </TransitionGroup>
-//         </div>
-//       </Layout>
-//     );
-//   }
-// }

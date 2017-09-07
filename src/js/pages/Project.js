@@ -1,6 +1,6 @@
 import React from "react"
 import { Redirect } from "react-router-dom"
-import { TransitionGroup, CSSTransition } from "react-transition-group"
+import { TransitionGroup } from "react-transition-group"
 
 import pixi from "../pixi/PIXIPage"
 import { FloatTransition } from "../util/Transitions"

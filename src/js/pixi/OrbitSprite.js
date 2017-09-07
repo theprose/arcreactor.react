@@ -1,4 +1,5 @@
 import { } from "pixi.js"
+import { hex2rgb, rgb2hex } from "../util/Utilities"
 
 const nodeScale = 0.05
 const initialRadius = 40
@@ -83,17 +84,16 @@ export default class OrbitSprite {
    }
 
    colorStep(fromColor, toColor, tick) {
-      const f = {r: (fromColor >> 16), g: (fromColor >> 8 & 0x00FF), b: (fromColor & 0x0000FF)}
-      const t = {r: (toColor >> 16), g: ((toColor >> 8) & 0x00FF), b: (toColor & 0x0000FF)}
+      const f = hex2rgb(fromColor)
+      const t = hex2rgb(toColor)
       const diff = {r: (t.r - f.r), g: (t.g - f.g), b: (t.b - f.b)}
       const step = {
          r: Math.min(Math.max(diff.r, -1), 1),
          g: Math.min(Math.max(diff.g, -1), 1),
          b: Math.min(Math.max(diff.b, -1), 1)
       }
-      const color = {r: (f.r + step.r), g: (f.g + step.g), b: (f.b + step.b)}
-      const newColor = (color.b | (color.g << 8) | (color.r << 16))
-      return newColor
+      const newColor = {r: (f.r + step.r), g: (f.g + step.g), b: (f.b + step.b)}
+      return rgb2hex(newColor)
    }
 
    destroy() {
