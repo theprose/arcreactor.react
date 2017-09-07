@@ -87,5 +87,12 @@ typings/
 
 # app specific
 app-config.js
+dist/*
+!dist/.gitkeep
 public/js/*
+!public/js/.gitkeep
+public/jimages/*
+!public/images/.gitkeep
+public/fonts/*
+!public/fonts/.gitkeep
 public/index.html
