@@ -87,3 +87,5 @@ typings/
 
 # app specific
 app-config.js
+public/js/*
+public/index.html

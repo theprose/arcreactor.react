@@ -7,11 +7,10 @@ const Projects = {
          flagship product. By making writing and publishing more accessible than ever, it seeks to 
          reinvigorate global interest in literature and inspire the next generation of writers. 
          With the global publishing industry in disarray, Prose has already enjoyed millions of 
-         reading minutes and pageviews on the website alone. A budding partnership with one of t
-         he world’s great publishers, Simon & Schuster, and a trove of new features and updates in 
+         reading minutes and pageviews on the website alone. A budding partnership with one of the 
+         world’s great publishers, Simon & Schuster, and a trove of new features and updates in 
          development pave the way for a bright future for social media and literature alike. In 
-         the near future, Prose will launch an auxiliary site for its best writers, and updates to 
-         its user profiles, which will allow authors to monetize their work via subscriptions from 
+         the near future, Prose will allow authors to monetize their work via subscriptions from 
          their readers.`,
          website: "https://theprose.com",
          ios: "https://itunes.apple.com/us/app/prose/id911216930",
@@ -23,7 +22,7 @@ const Projects = {
          summary: `SQRL is a simple iPad app that allows users to turn their iPads and iPad Pros 
          into wireless trackpads for their Macs. By providing robust Apple Pencil support, it seeks 
          to empower artists and graphic designers to use their iPads as drawing tablets with 
-         creativity apps such as Photoshop and Illustrator. It was launched just a week ago fo $1.99 
+         creativity apps such as Photoshop and Illustrator. It was launched in June 2017 for $1.99 
          on the App Store. In the near future, we’ll be working on a more extensive feature set to 
          allow users more flexibility in remote controlling their Macs using their iOS devices.`,
          website: "http://thesqrlapp.com",
@@ -39,7 +38,7 @@ const Projects = {
          address book. People receive simple messages like “You are Loved,” intended to, if only for 
          a moment, bring a little more love into their lives. Love also makes it possible to send 
          these feel-good notifications to strangers around the world, and provides simple exercises 
-         to help us “think with our hearts.” Love will launch worldwide on the App Store in early 
+         to help us “think with our hearts.” Love launched worldwide on the App Store in early 
          June of 2017.`,
          website: "https://livn.love",
          ios: "https://itunes.apple.com/us/app/love/id1129131596",

@@ -83,7 +83,7 @@ module.exports = {
   output: {
     path: __dirname + "/public",
     publicPath: "/public/",
-    filename: debug ? "client.min.js" : "client-[hash:6].min.js"
+    filename: debug ? "js/client.min.js" : "js/client-[hash:6].min.js"
   },
   devServer:{
       contentBase: 'public',

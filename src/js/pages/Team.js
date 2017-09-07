@@ -30,7 +30,7 @@ export default class Team extends React.Component {
                We prefer discretion.
                <br /><br />
                If you'd like to know more about us, or pitch us on your idea, send us
-               and email at <a href="mailto:hello@arcreactor.com">hello@arcreactor.com</a></p>
+               an email at <a href="mailto:hello@arcreactor.com">hello@arcreactor.com</a></p>
             </div>
          </FloatTransition>
       )
