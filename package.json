@@ -1,6 +1,6 @@
 {
   "name": "arcreactor-web.react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React front-end app for arcreactor.com",
   "repository": {
     "type": "git",

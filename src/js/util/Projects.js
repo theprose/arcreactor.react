@@ -40,7 +40,7 @@ const Projects = {
          these feel-good notifications to strangers around the world, and provides simple exercises 
          to help us “think with our hearts.” Love launched worldwide on the App Store in early 
          June of 2017.`,
-         website: "https://livn.love",
+         website: "https://love.arcreactor.com",
          ios: "https://itunes.apple.com/us/app/love/id1129131596",
          color: 0x00e8ff
       },
