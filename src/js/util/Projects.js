@@ -25,7 +25,7 @@ const Projects = {
          creativity apps such as Photoshop and Illustrator. It was launched in June 2017 for $1.99 
          on the App Store. In the near future, we’ll be working on a more extensive feature set to 
          allow users more flexibility in remote controlling their Macs using their iOS devices.`,
-         website: "http://thesqrlapp.com",
+         website: "http://sqrl.arcreactor.com",
          ios: "https://itunes.apple.com/us/app/sqrl-controller/id1232478753",
          color: 0xee4523
       },
